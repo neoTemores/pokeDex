@@ -1,0 +1,83 @@
+body {
+    background-image: url("./pictures/background1.jpeg");
+    background-position: center center;
+    /* background-color: black; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* background-color: #464646; */
+    height: 100%;
+    width: 100%;
+    color: white
+}
+
+h1 {
+    color: white;
+    background-color: red;
+    width: 170px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px white;
+    text-align: center;
+
+}
+
+#searchBoxContainer {}
+
+.priceUpdate {
+    font-size: small;
+}
+
+
+#main {
+    width: 80vw;
+    height: 100vh;
+    /* font-family: "Arima Madurai", cursive; */
+    /* background-color: rgb(141, 201, 221); */
+    /* opacity: 90%; */
+    margin: auto;
+    /* border-radius: 90px; */
+    text-align: left;
+    padding: 10px;
+    color: white;
+    /* border-color: black; */
+    font-weight: bold;
+    font-size: large;
+
+}
+
+#resultContainer {
+    width: fit-content;
+    height: fit-content;
+    /* width: 700px;
+    height: 800px;
+    /* background-color: blue; */
+    /* margin: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 20px;
+    */
+
+}
+
+.resultPokemon {
+    width: 100%;
+    height: fit-content;
+    background-color: none;
+    /* background-image: url("./pictures/background1.jpeg"); */
+    opacity: 90%;
+    margin: auto;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    /* color: black; */
+
+}
+
+.pokemonPic {
+    box-shadow: 5px 5px 5px white;
+    border-radius: 15px;
+}
+
+/* a {
+    cursor: pointer;
+} */
