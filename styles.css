@@ -1,3 +1,7 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 body {
     background-image: url("./pictures/background1.jpeg");
     background-position: center center;
@@ -8,11 +12,30 @@ body {
     /* background-color: #464646; */
     height: 100%;
     width: 100%;
-    color: white
+    /* color: black */
+}
+
+#main {
+    width: 80vw;
+    height: 100vh;
+    /* font-family: "Arima Madurai", cursive; */
+    /* background-color: rgb(141, 201, 221); */
+    margin: auto;
+    /* border-radius: 90px; */
+    padding: 10px;
+    color: white;
+    /* border-color: black; */
+    font-weight: bold;
+    font-size: large;
+
+}
+
+#header {
+    color: white;
 }
 
 h1 {
-    color: white;
+    /* color: white; */
     background-color: red;
     width: 170px;
     border-radius: 10px;
@@ -21,29 +44,13 @@ h1 {
 
 }
 
+
 #searchBoxContainer {}
 
-.priceUpdate {
-    font-size: small;
-}
+input {}
 
+button {}
 
-#main {
-    width: 80vw;
-    height: 100vh;
-    /* font-family: "Arima Madurai", cursive; */
-    /* background-color: rgb(141, 201, 221); */
-    /* opacity: 90%; */
-    margin: auto;
-    /* border-radius: 90px; */
-    text-align: left;
-    padding: 10px;
-    color: white;
-    /* border-color: black; */
-    font-weight: bold;
-    font-size: large;
-
-}
 
 #resultContainer {
     width: fit-content;
@@ -63,21 +70,68 @@ h1 {
     width: 100%;
     height: fit-content;
     background-color: none;
-    /* background-image: url("./pictures/background1.jpeg"); */
-    opacity: 90%;
+    background-image: url("./pictures/resultBackground.png");
+    background-position: center;
+
     margin: auto;
     border-radius: 20px;
-    align-items: center;
+    text-shadow: black;
+}
+
+.pokemonName {
+    /* align-items: center; */
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto;
+    width: 80% */
     text-align: center;
-    /* color: black; */
+    height: 100%;
+    width: 100%;
+
+    /* background-color: white; */
+    /* border-top-left-radius: 15px;
+    border-top-right-radius: 15px; */
 
 }
 
 .pokemonPic {
-    box-shadow: 5px 5px 5px white;
+    box-shadow: 5px 5px 5px black;
     border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
-/* a {
+.summary {
+    height: fit-content;
+    width: fit-content;
+    /* background-color: white; */
+    /* border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; */
+}
+
+/* card detail title */
+.stats {
+    /* align-items: center; */
+}
+
+.statsList {
+    list-style-image: url('./pictures/Pokemon-Pokeball.png')
+}
+
+.dexNum {}
+
+.rarity {}
+
+.cardNum {}
+
+.cardPrice {}
+
+.priceUpdate {
+    font-size: small;
+}
+
+a {
     cursor: pointer;
-} */
+}
