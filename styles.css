@@ -50,24 +50,52 @@ h1 {
 
 #searchBoxContainer {
     margin-top: -10px;
+    display: flex;
 }
 
-input {}
+input {
+    position: relative;
+    top: 30px;
+    height: 40px;
+    border: 5px solid blue;
+    background-color: yellow;
+    font-size: large;
+    font-style: italic;
+    color: blue;
+    font-weight: bold;
 
-button {}
+}
+
+button {
+    background-color: red;
+    box-shadow: 5px 5px 5px white;
+    color: white;
+    font-size: large;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-weight: bold;
+    border-color: black;
+}
+
+button:hover {
+    background-image: url('./pictures/resultBackground\ copy.png');
+    background-size: cover;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    box-shadow: 15px 15px 15px white;
+    border-color: black;
+
+}
 
 
 #resultContainer {
     width: fit-content;
+    /* width: 100%; */
+
     height: fit-content;
-    /* width: 700px;
-    height: 800px;
-    /* background-color: blue; */
-    /* margin: auto;
-    margin-top: 30px;
-    border-radius: 20px;
-    padding: 20px;
-    */
+
 
 }
 
@@ -112,11 +140,14 @@ canvas {
     height: fit-content;
     background-color: none;
     background-image: url("./pictures/resultBackground.png");
+    /* background-image: url("./pictures/pokedex.png"); */
     background-position: center;
-
+    background-repeat: repeat-y;
+    color: yellow;
     margin: auto;
     border-radius: 20px;
-    text-shadow: black;
+    text-shadow: 2px 2px blue;
+
 }
 
 .pokemonName {
@@ -126,39 +157,81 @@ canvas {
     margin-right: auto;
     width: 80% */
     text-align: center;
+    font-size: xx-large;
     height: 100%;
     width: 100%;
+    box-shadow: 3px 3px 3px black;
+    border-radius: 25px;
 
-    /* background-color: white; */
-    /* border-top-left-radius: 15px;
-    border-top-right-radius: 15px; */
+    /* position: relative;
+    left: 250px;
+    top: 230px; */
 
 }
 
 .pokemonPic {
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 10px 10px 10px black;
     border-radius: 15px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    opacity: none;
+    /* position: relative;
+    left: -150px;
+    top: 140px; */
 
+}
+
+.pokemonPic:hover {
+    box-shadow: 25px 25px 25px black;
+    position: relative;
+    top: -15px
 }
 
 .summary {
     height: fit-content;
     width: fit-content;
-    /* background-color: white; */
-    /* border-bottom-left-radius: 15px;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    color: yellow;
+    /* color: white; */
+    text-shadow: -1px -1px 0 blue, 1px -1px 0 blue, -1px 1px 0 blue, 1px 1px 0 blue;
+    position: relative;
+    top: -15px
+        /* background-color: lightblue; */
+
+        /* position: relative;
+    top: -100px;
+    left: 650px; */
+
+        /* background-color: white; */
+        /* border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px; */
 }
 
 /* card detail title */
 .stats {
+    box-shadow: 5px 5px 5px black;
+    border-radius: 5px;
+
+    /* background-color: azure */
     /* align-items: center; */
 }
 
 .statsList {
+    box-shadow: 5px 5px 5px black;
+    border-radius: 5px;
+
+
+    /* position: relative;
+    left: -20px;
+    top: 10px; */
     list-style-image: url('./pictures/Pokemon-Pokeball.png')
+}
+
+li {
+    /* position: relative */
 }
 
 .dexNum {}
@@ -171,6 +244,9 @@ canvas {
 
 .priceUpdate {
     font-size: small;
+    font-style: italic;
+    position: relative;
+    top: -5px
 }
 
 a {

@@ -2,7 +2,7 @@ let pokeballCanvas = document.getElementById('pokeball')
 let main = document.querySelector('#resultContainer')
 
 let innerWidth = window.innerWidth;
-let innerHeight = 550;
+let innerHeight = window.innerHeight;
 
 
 const scene = new THREE.Scene();
@@ -134,8 +134,8 @@ function drawPokeball() {
 
     scene.add(pokeball);
 
-    pokeball.position.x = -100
-    pokeball.position.y = 30
+    pokeball.position.x = -50
+    pokeball.position.y = 40
 
     camera.position.z = 100;
     camera.lookAt(scene.position);
