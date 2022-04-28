@@ -1,4 +1,3 @@
-// https://api.pokemontcg.io/v2/cards?q=name:pikachu
 
 let inputBox = document.querySelector('input')
 let inputText;
