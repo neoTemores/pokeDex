@@ -8,6 +8,7 @@ let homepage = document.querySelector('#homepage')
 inputBox.addEventListener('click', () => { inputBox.value = '' })
 
 submitButton.addEventListener('click', checkValidInput)
+
 inputBox.addEventListener('keypress', (e) => {
     if (e.key == 'Enter') {
         checkValidInput()
@@ -18,15 +19,16 @@ submitButton.addEventListener('mouseenter', () => { submitButton.textContent = "
 submitButton.addEventListener('mouseleave', () => { submitButton.textContent = "Search" })
 homepage.addEventListener('click', () => { location.reload(); })
 
-
 function checkValidInput() {
     inputText = inputBox.value;
-    if (inputText.length !== 0) {
-        searchForPokemon();
-    }
-    else {
-        alert("Please enter a Pokemon name!") //add image to alert?
-    }
+    if (inputText.length !== 0) { searchForPokemon(); }
+    else { alert("Please enter a Pokemon name!") }
+}
+
+function checkForError() {
+    $.ajaxSetup({
+        error: function (x) { if (x.status == 400) { alert('Pokemon not found!'); } }
+    });
 }
 
 function searchForPokemon() {
@@ -34,14 +36,11 @@ function searchForPokemon() {
 
     $.get(`https://api.pokemontcg.io/v2/cards?q=name:${inputText}*`, function (e) {
         let results = e.data
-        if (e.data.length === 0) {
-            alert('No Pokemon found by that name!')
-        }
+        if (e.data.length === 0) { alert('No Pokemon found by that name!') }
 
         if (e.data.length !== 0) {
 
             $resultContainer.empty();
-            console.log(results);
 
             for (var i = 0; i < results.length; i++) {
                 // console.log(results[i]);
@@ -58,7 +57,6 @@ function searchForPokemon() {
                 else { marketPrice = (results[i].cardmarket.prices.trendPrice).toFixed(2) }
 
                 let priceUpdate = results[i].cardmarket.updatedAt;
-
 
                 let cardLink;
                 if (results[i].tcgplayer !== undefined) { cardLink = results[i].tcgplayer.url }
@@ -104,17 +102,6 @@ function searchForPokemon() {
             }
         }
     })
-}
-
-function checkForError() {
-    $.ajaxSetup({
-        error: function (x) {
-
-            if (x.status == 400) {
-                alert('Pokemon not found!');
-            }
-        }
-    });
 }
 
 
