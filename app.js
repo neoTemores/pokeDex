@@ -3,6 +3,7 @@ let inputBox = document.querySelector('input')
 let inputText;
 let submitButton = document.querySelector('#submit');
 let $resultContainer = $('#resultContainer')
+let homepage = document.querySelector('#homepage')
 
 inputBox.addEventListener('click', () => { inputBox.value = '' })
 
@@ -15,6 +16,8 @@ inputBox.addEventListener('keypress', (e) => {
 
 submitButton.addEventListener('mouseenter', () => { submitButton.textContent = "" })
 submitButton.addEventListener('mouseleave', () => { submitButton.textContent = "Search" })
+homepage.addEventListener('click', () => { location.reload(); })
+
 
 function checkValidInput() {
     inputText = inputBox.value;
@@ -27,7 +30,6 @@ function checkValidInput() {
 }
 
 function searchForPokemon() {
-    console.log('still working :', inputText);
     checkForError();
 
     $.get(`https://api.pokemontcg.io/v2/cards?q=name:${inputText}*`, function (e) {
@@ -63,21 +65,19 @@ function searchForPokemon() {
                 else if (results[i].cardmarket !== undefined) { cardLink = results[i].cardmarket.url }
                 else { cardLink; } // create /add new class for link n/a and add event listener
 
-
-
                 //! create the HTML elements:
                 let $div = $('<div class="resultPokemon"></div>');
                 $($div).appendTo($resultContainer);
 
                 let $pokemonName = $(`<h2 class="pokemonName">${name}</h2>`);
                 $pokemonName.appendTo($div);
-                //!
-                // let $link = $(`<a href = "${cardLink}">Click to Buy</a>`)
-                // $link.appendTo($statsList)
 
                 let $img = $(`<a href="${cardLink}"><img class = "pokemonPic" src = "${picture}"></a>`);
                 $img.appendTo($div);
-                //!
+
+                let $span = $('<div class="tipText">Click to buy</div>')
+                $span.appendTo($img);
+
                 let $summary = $('<div class = "summary"></div>');
                 $summary.appendTo($div);
 
@@ -101,11 +101,8 @@ function searchForPokemon() {
 
                 let $priceUpdate = $(`<li class="priceUpdate">Price updated: ${priceUpdate}</li>`)
                 $priceUpdate.appendTo($statsList)
-
-
             }
         }
-
     })
 }
 
