@@ -5,6 +5,7 @@ let submitButton = document.querySelector('#submit');
 let $resultContainer = $('#resultContainer')
 let homepage = document.querySelector('#homepage')
 
+//handle input text
 inputBox.addEventListener('click', () => { inputBox.value = '' })
 
 submitButton.addEventListener('click', checkValidInput)
@@ -15,6 +16,7 @@ inputBox.addEventListener('keypress', (e) => {
     }
 })
 
+//handle submit button and logo refresh
 submitButton.addEventListener('mouseenter', () => { submitButton.textContent = "" })
 submitButton.addEventListener('mouseleave', () => { submitButton.textContent = "Search" })
 homepage.addEventListener('click', () => { location.reload(); })
@@ -70,7 +72,7 @@ function searchForPokemon() {
                 let $pokemonName = $(`<h2 class="pokemonName">${name}</h2>`);
                 $pokemonName.appendTo($div);
 
-                let $img = $(`<a href="${cardLink}"><img class = "pokemonPic" src = "${picture}"></a>`);
+                let $img = $(`<a href="${cardLink}" target="_blank"><img class = "pokemonPic" src = "${picture}"></a>`);
                 $img.appendTo($div);
 
                 let $span = $('<div class="tipText">Click to buy</div>')
